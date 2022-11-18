@@ -1,0 +1,9 @@
+.attached_wrapper{
+   @apply mt-[135px] mb-[55px] lg:m-0
+}
+.images_wrapper{
+    @apply  flex gap-[10px] mt-[21px] flex-nowrap overflow-hidden overflow-x-scroll
+}
+.image{
+    @apply w-[200px] h-[116px] shrink-0 object-cover rounded-lg
+}

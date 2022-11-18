@@ -1,0 +1,60 @@
+.container {
+  @apply flex flex-col justify-center w-[414px] pb-[37px] pt-6 px-4 bg-white  mx-auto text-[rgba(56,65,93,0.82)]
+         lg:w-[1920px] lg:text-[#3A4562] lg:px-[20px] lg:pb-[301px] lg:pt-14 lg:flex-row lg:relative ;
+}
+.container h1 {
+  @apply  text-2xl leading-[34px] mb-3 font-bold tracking-[0.413333px]
+          lg:text-[28px] 
+}
+.container h2 {
+  @apply  text-[28px] leading-[34px] mb-[10px] font-bold
+          lg:mb-0
+}
+.container h3 {
+  @apply  text-xl leading-[25px] font-bold mt-5 mb-4;
+}
+.container h4 {
+  @apply text-[#38415D] text-lg leading-6;
+}
+hr {
+  @apply bg-[#3A4562] opacity-[0.13];
+}
+.lgBookmark{
+  @apply flex 
+}
+.title_block{
+  @apply flex flex-col 
+        lg:flex-row lg:mt-8 lg:relative lg:items-start
+}
+.title_text{
+  @apply text-2xl leading-[30px] tracking-[-0.75px] font-bold 
+          lg:w-[500px]
+}
+.title_additional_wrapper{
+  @apply relative flex flex-col  mt-1 mb-4
+          lg:m-0 lg:flex-col-reverse 
+}
+.title_additional{
+  @apply  absolute text-sm leading-5 tracking-[0.191905px] top-[315px]
+          lg:tracking-[-0.5625px] lg:text-[rgba(56,65,93,0.355988)] lg:text-lg lg:leading-6 lg:top-0
+          lg:left-0 lg:static lg:my-[7px]
+}
+.title_additional_text{
+  @apply text-lg leading-6 text-end
+}
+.title_additional_salary{
+  @apply text-xl leading-6 text-end font-bold
+}
+.description{
+  @apply text-lg leading-6 w-full tracking-[-0.5625px]
+  lg:font-roboto mb-[30px];
+}
+li {
+  @apply list-square ml-5
+        lg:m-0
+}
+li::marker {
+  @apply text-[25px] bg-[rgba(56,69,100,0.632594)]
+}
+
+

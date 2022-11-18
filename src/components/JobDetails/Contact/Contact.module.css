@@ -1,0 +1,24 @@
+.info_wrapper{
+    @apply bg-[#2A3047] pb-6 pt-[31px] mt-[21px] px-[62px] rounded-t-lg
+}
+.info_title{
+    @apply text-[16px] font-bold leading-[19px] text-[#E7EAF0] tracking-[0.23619px]
+            lg:text-xl lg:leading-[25px] lg:tracking-[-0.625px]
+}
+.info_location_wrapper{
+    @apply flex w-full mt-[15px] mb-[6px] 
+        lg:mt-[7.5px] lg:mb-[7px]
+}
+.info_address{
+    @apply text-base leading-[23px] text-[#E7EAF0] ml-1 tracking-[-0.5px]
+            lg:text-lg lg:leading-6 lg:text-[#E8EBF3] lg:tracking-[-0.5625px] lg:font-roboto
+ }
+
+.info_contact{
+    @apply text-base leading-[23px] text-[rgba(255,255,255,0.669635)] tracking-[-0.5px]
+    lg:text-lg lg:leading-6 lg:text-[#E8EBF3] lg:tracking-[-0.5625px]
+}
+.map{
+   @apply w-full h-[218px] rounded-b-lg 
+    lg:w-[402px]
+}

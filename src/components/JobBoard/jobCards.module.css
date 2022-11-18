@@ -1,0 +1,33 @@
+.wrapper{
+    @apply  flex flex-row bg-bgcard rounded-lg h-[206px] mt-2 mb-2 relative shadow-box
+            lg:h-[164px] lg:m-0 lg:py-6 lg:px-4
+}
+.company_wrapper_img{
+    @apply w-16 h-16 mt-[45px] ml-4 bg-cover
+            lg:w-[85px] lg:h-[85px] lg:m-0
+ }
+.company_upt_data{
+    @apply absolute text-sm leading-[17px] right-4 top-3 text-[#878D9D] tracking-[0.206667px]
+            lg:text-base lg:leading-[25px] lg:top-[115px] lg:tracking-[0.23619px]
+}
+.company_wrapper{
+    @apply flex flex-col w-72 mt-4 ml-5 p-1
+         lg:flex-row-reverse lg:justify-between lg:w-[1080px] lg:mt-0 lg:items-center
+}
+.company_title{
+    @apply cursor-pointer font-bold h-8 text-xl leading-[25px] text-[#3A4562] tracking-[-0.625px]
+            lg:tracking-[-0.5625px]
+}
+.company_name{
+    @apply  mt-1 text-base leading-[25px] text-[#878D9D] tracking-[0.23619px]
+}
+
+.company_address_block{
+    @apply flex flex-row mt-2
+}
+.company_address {
+    @apply text-base leading-[25px] ml-2 text-[#878D9D] tracking-[0.23619px]
+}
+.bookmark{
+    @apply absolute right-6 top-[30px]
+}

@@ -5,25 +5,30 @@ module.exports = {
   ],
 
   theme: {
-    screens:{
+    screens: {
       lg: '1920px',
       sm: '414px'
     },
-    container:{
-      padding: '9px',
+    container: {
       center: true
     },
     extend: {
-     backgroundColor:{
+      backgroundColor: {
         bgbody: '#E6E9F2',
         bgcard: '#EFF0F5'
       },
-      colors:{
-        darkness: '#3A4562',
-        lightness: '#878D9D'
+      boxShadow: {
+        'box': '2px 1px 7px rgba(0, 0, 0, 0.08) ,0px 2px 1px -1px rgba(0, 0, 0, 0.04), 0px 1px 3px rgba(0, 0, 0, 0.12)',
       },
-      width:{
+      width: {
         97: '414px'
+      },
+      fontFamily: {
+        roboto: ['Roboto', 'sans-serif'],
+        proxima: ['Proxima Nova', 'sans-serif'],
+      },
+      listStyleType: {
+        square: 'square'
       }
     },
   },

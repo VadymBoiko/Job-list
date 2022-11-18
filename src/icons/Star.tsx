@@ -4,6 +4,7 @@ export const Star = () => {
   return (
     <div>
       <svg
+        className="lg:w-5 lg:h-5"
         width="10"
         height="10"
         viewBox="0 0 10 10"
