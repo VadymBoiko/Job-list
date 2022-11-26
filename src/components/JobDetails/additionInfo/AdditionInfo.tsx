@@ -1,15 +1,15 @@
 import React from "react";
-import { IVacancy } from "../../../data/data";
+import { IVacancy } from "../../../interfaces/interfaces";
 import styles from "./AdditionInfo.module.css";
 interface AdditionInfoProps {
-  benefits: IVacancy["benefits"];
-  employment_type: IVacancy["employment_type"];
+  benefits: Array<string>;
+  employment_type: Array<string>;
 }
 
-export const AdditionInfo = ({
+export const AdditionInfo: React.FC<AdditionInfoProps> = ({
   employment_type,
   benefits,
-}: AdditionInfoProps) => {
+}) => {
   return (
     <div className={styles.wrapper}>
       <h2>Addition Info</h2>

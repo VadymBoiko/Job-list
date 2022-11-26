@@ -1,7 +1,6 @@
 import { Share } from "../../utilities/Share";
 import { MarkStar } from "../../utilities/MarkStar";
 import { Button } from "./ButtonApply";
-import styles from "./jobDetails.module.css";
 import { Salary } from "../../utilities/Salary";
 import { Description } from "../../utilities/Description";
 import { AttachedImages } from "./AttachedImages/AttachedImages";
@@ -10,114 +9,91 @@ import { Contacts } from "./Contact/Contacts";
 import { DateCalculation } from "../../utilities/DateCalculation";
 import { Bookmark } from "../../utilities/Bookmark";
 import { ButtonReturn } from "./ButtonReturn";
+import { useParams } from "react-router-dom";
+import styles from "./jobDetails.module.css";
+import { useJobCards } from "../../hooks/UseJobCards";
+import { jobList } from "../../data/data";
+import { useMediaQuery } from "react-responsive";
 
-interface VacancyProps {
-  id: string;
-  name: string;
-  email: string;
-  phone: string;
-  title: string;
-  salary: string;
-  address: string;
-  benefits: Array<string>;
-  location: {
-    lat: number;
-    long: number;
-  };
-  pictures: Array<string>;
-  createdAt: string;
-  updatedAt: string;
-  description: string;
-  employment_type: Array<string>;
-}
+export const JobDetails: React.FC = () => {
+  // const { jobCards } = useJobCards();
 
-export const JobDetails = ({
-  id,
-  name,
-  email,
-  phone,
-  title,
-  salary,
-  address,
-  benefits,
-  location,
-  pictures,
-  createdAt,
-  updatedAt,
-  description,
-  employment_type,
-}: VacancyProps) => {
-  const windowInnerWidth = window.innerWidth;
+  const { id } = useParams();
+  const card = jobList.find((card) => card.id.toString() === id);
+
+  const isDesktop = useMediaQuery({ query: "(min-width: 1920px)" });
+  const isMobile = useMediaQuery({ query: "min-width: 414px)" });
 
   return (
     <main>
       <section>
-        <div className={styles.container}>
-          <div className="lg:w-[774px] lg:mr-[131px]">
-            {windowInnerWidth < 1920 ? (
-              <div>
-                <h1>Job Details</h1>
-                <hr />
-                <div className="flex mt-6 mb-[34px]">
-                  <MarkStar />
-                  <Share />
-                </div>
-              </div>
-            ) : (
-              <div>
-                <div className="flex justify-between">
+        {card && (
+          <div className={styles.container}>
+            <div className="lg:w-[774px] lg:mr-[131px]">
+              {isMobile && (
+                <div>
                   <h1>Job Details</h1>
-                  <div className="flex ">
-                    <Bookmark className={styles.lgBookmark} />
-                    <span className="ml-4">Save to my list</span>
+                  <hr />
+                  <div className="flex mt-6 mb-[34px]">
+                    <MarkStar />
                     <Share />
                   </div>
                 </div>
-                <hr className="mb-[39px]" />
-                <Button />
+              )}
+              {isDesktop && (
+                <div>
+                  <div className="flex justify-between">
+                    <h1>Job Details</h1>
+                    <div className="flex ">
+                      <Bookmark className={styles.lgBookmark} />
+                      <span className="ml-4">Save to my list</span>
+                      <Share />
+                    </div>
+                  </div>
+                  <hr className="mb-[39px]" />
+                  <Button />
+                </div>
+              )}
+              <div className={styles.title_block}>
+                <h2 className={styles.title_text}>{card.title}</h2>
+                <div className={styles.title_additional_wrapper}>
+                  <p className={styles.title_additional_text}>
+                    Brutto, per yeaer
+                  </p>
+                  <p className={styles.title_additional_salary}>
+                    € {Salary(card.salary)}
+                  </p>
+                </div>
               </div>
-            )}
-            <div className={styles.title_block}>
-              <h2 className={styles.title_text}>{title}</h2>
-              <div className={styles.title_additional_wrapper}>
-                <p className={styles.title_additional_text}>
-                  Brutto, per yeaer
-                </p>
-                <p className={styles.title_additional_salary}>
-                  € {Salary(salary)}
-                </p>
+              <div>
+                <div className={styles.description}>
+                  <div className={styles.post_date}>
+                    {DateCalculation(card.updatedAt)}
+                  </div>
+                  {Description(card.description)}
+                </div>
               </div>
-            </div>
-            <div className={styles.title_additional}>
-              {DateCalculation(updatedAt)}
+              <Button />
+              <div className="flex flex-col lg:flex-col-reverse">
+                <AttachedImages pictures={card.pictures} />
+                <AdditionInfo
+                  benefits={card.benefits}
+                  employment_type={card.employment_type}
+                />
+                {isDesktop && <ButtonReturn />}
+              </div>
             </div>
             <div>
-              <div className={styles.description}>
-                {Description(description)}
-              </div>
-            </div>
-            <Button />
-            <div className="flex flex-col lg:flex-col-reverse">
-              <AttachedImages 
-                pictures={pictures} 
-                />
-              <AdditionInfo
-                benefits={benefits}
-                employment_type={employment_type}
+              <Contacts
+                name={card.name}
+                address={card.address}
+                email={card.email}
+                phone={card.phone}
+                location={card.location}
               />
             </div>
           </div>
-          <div>
-            <Contacts
-              name={name}
-              address={address}
-              email={email}
-              phone={phone}
-              location={location}
-            />
-          </div>
-        </div>
-        {windowInnerWidth < 1920 ? ('') : (<ButtonReturn />)}
+        )}
       </section>
     </main>
   );

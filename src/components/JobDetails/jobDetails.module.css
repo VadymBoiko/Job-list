@@ -34,10 +34,9 @@ hr {
   @apply relative flex flex-col  mt-1 mb-4
           lg:m-0 lg:flex-col-reverse 
 }
-.title_additional{
-  @apply  absolute text-sm leading-5 tracking-[0.191905px] top-[315px]
-          lg:tracking-[-0.5625px] lg:text-[rgba(56,65,93,0.355988)] lg:text-lg lg:leading-6 lg:top-0
-          lg:left-0 lg:static lg:my-[7px]
+.post_date{
+  @apply  absolute text-sm leading-5 tracking-[0.191905px] top-[-50px]
+          lg:tracking-[-0.5625px] lg:text-[rgba(56,65,93,0.355988)] lg:text-lg lg:leading-6 lg:top-[-38px] lg:my-[7px]
 }
 .title_additional_text{
   @apply text-lg leading-6 text-end
@@ -46,8 +45,8 @@ hr {
   @apply text-xl leading-6 text-end font-bold
 }
 .description{
-  @apply text-lg leading-6 w-full tracking-[-0.5625px]
-  lg:font-roboto mb-[30px];
+  @apply relative text-lg leading-6 w-full tracking-[-0.5625px]
+  lg:font-roboto mb-[30px] lg:mt-[39px];
 }
 li {
   @apply list-square ml-5

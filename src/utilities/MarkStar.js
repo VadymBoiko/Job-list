@@ -1,5 +1,5 @@
 import React from 'react'
-import {ReactComponent as MarkStarSVG} from '../icons/Star.svg'
+import {ReactComponent as MarkStarSVG} from '../icons/StarSave.svg'
 
 export const MarkStar = () => {
   return (

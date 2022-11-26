@@ -1,8 +1,8 @@
 import React from "react";
-import { IVacancy } from "../../../data/data";
+import { IVacancy } from "../../../interfaces/interfaces";
 import styles from './AttachedImages.module.css'
 interface AttachedImagesProps {
-  pictures: IVacancy["pictures"];
+  pictures: Array<string>;
 }
 export const AttachedImages = ({ pictures }: AttachedImagesProps) => {
   return (

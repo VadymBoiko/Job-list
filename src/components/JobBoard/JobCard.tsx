@@ -1,19 +1,23 @@
-import { IVacancy } from "../../data/data";
-import { Star } from "../../icons/Star";
+import { IVacancy } from "../../interfaces/interfaces";
 import { Location } from "../../icons/Location";
 import { Link } from "react-router-dom";
-import styles from "./jobCards.module.css";
 import { Bookmark } from "../../utilities/Bookmark";
 import { DateCalculation } from "../../utilities/DateCalculation";
+import { StarRaiting } from "./StarRaiting";
+import { useMediaQuery } from "react-responsive";
+import styles from "./jobCards.module.css";
 
 export interface VacancyProps {
   item: IVacancy;
 }
 
-export const JobCard = ({ item }: VacancyProps) => {
-  const windowInnerWidth = window.innerWidth;
+export const JobCard:React.FC<VacancyProps> = ({ item }) => {
+
+
+  const isDesktop = useMediaQuery({ query: "(min-width: 1920px)" });
+
   return (
-    <section id="job-item">
+    <section >
       <div className={styles.wrapper}>
         <div className={styles.company_wrapper_img}>
           <img
@@ -22,20 +26,16 @@ export const JobCard = ({ item }: VacancyProps) => {
             alt={item.name}
           />
         </div>
-        {windowInnerWidth === 1920 ?<Bookmark className={styles.bookmark}/>  : ''}
+        {isDesktop && <Bookmark className={styles.bookmark}/> }
         <div className={styles.company_upt_data}>
           {DateCalculation(item.updatedAt)}
         </div>
         <div className={styles.company_wrapper}>
-          <div className="flex mb-4 lg:ml-16">
-            <Star />
-            <Star />
-            <Star />
-            <Star />
-            <Star />
+          <div className="flex lg:ml-16">
+            <StarRaiting/>
           </div>
           <div>
-            <Link to={`/card-${item.id}`} className={styles.company_title}>
+            <Link to={`/cards/${item.id}`} className={styles.company_title}>
               {item.title}
             </Link>
             <p className={styles.company_name}>

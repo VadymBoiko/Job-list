@@ -1,6 +1,6 @@
 .wrapper{
-    @apply  flex flex-row bg-bgcard rounded-lg h-[206px] mt-2 mb-2 relative shadow-box
-            lg:h-[164px] lg:m-0 lg:py-6 lg:px-4
+    @apply  flex flex-row  bg-bgcard rounded-lg h-[206px] mt-2 mb-2 relative shadow-box
+            lg:h-[164px] lg:m-0 lg:py-6 lg:px-4 lg:items-center
 }
 .company_wrapper_img{
     @apply w-16 h-16 mt-[45px] ml-4 bg-cover
@@ -11,7 +11,7 @@
             lg:text-base lg:leading-[25px] lg:top-[115px] lg:tracking-[0.23619px]
 }
 .company_wrapper{
-    @apply flex flex-col w-72 mt-4 ml-5 p-1
+    @apply flex flex-col w-72 mt-[17px] ml-[19px]
          lg:flex-row-reverse lg:justify-between lg:w-[1080px] lg:mt-0 lg:items-center
 }
 .company_title{
